@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+    <ion-title>Panchayath View</ion-title>
+    <!-- <ion-button fill="clear" [routerLink]= "['/vegandfruites/Admin/categoeryregistration']">
+        Add New
+      </ion-button> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]='viewpanchayath'>
+
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Select District" formControlName="districtname" (ionChange)="view()">
+          <ion-select-option *ngFor="let d of district" value="{{d.districtname}}"   >{{d.districtname}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      </ion-list>
+
+</form>
+  <ion-item *ngFor="let p of panchayath;">
+    <div>
+      <br>
+ 
+
+    <!-- <div>
+      <img [src]="c.image" height="100px">
+    </div> 
+    <br> -->
+    <div>
+     Panchayath Name :- {{p.panchayathname}}
+    </div>
+    <br>
+  </div>
+   
+    <br>
+
+    <div> 
+    <ion-button fill="solid"
+    (click)="delete(p.collection_panchayathId)">Delete</ion-button>
+    </div>
+    
+  </ion-item>
+</ion-content>

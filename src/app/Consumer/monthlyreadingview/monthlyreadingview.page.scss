@@ -1,0 +1,45 @@
+.label {
+  position:  relative;
+  padding: 1em;
+  border-radius: .5em;
+  cursor: pointer;
+}
+.label::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1em;
+  border-left: 1px solid;
+}
+.open .label::after {
+   content: "▲";
+}
+.select-1 {
+   background: #21cf8f;
+  border-bottom: .25em solid darken(#21cf8f, 10);
+  &:after {
+     border-color: darken(#21cf8f, 10);
+  }
+}
+.select-2 {
+   background: #307ddb;
+  border-bottom: .25em solid darken(#307ddb, 10);
+  &:after {
+     border-color: darken(#307ddb, 10);
+  }
+}
+.select-3 {
+   background: #f2bb18;
+  border-bottom: .25em solid darken(#f2bb18, 10);
+  &:after {
+     border-color: darken(#f2bb18, 10);
+  }
+}
+.select-4 {
+  background: #db3d3d;
+  border-bottom: .25em solid darken(#db3d3d, 10);
+  &:after {
+     border-color: darken(#db3d3d, 10);
+  }
+}

@@ -1,0 +1,128 @@
+ion-item{
+    --padding-bottom: 30px;
+}
+td{
+    padding:10px;
+    font-weight: bold;
+}
+#edit-icon{
+display: block;
+color: black;
+margin-left: 90%;
+font-size: 150%;
+padding: 10px;
+}
+
+//
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+
+// %reset { margin: 0; padding: 0; }
+// %flex { display: flex; justify-content: center;	align-items: center; }
+ 
+@mixin animated($timein: null, $delay: null) { 
+ transition: all $timein ease-in-out;
+  transition-delay: $delay; 
+}
+
+@mixin dimensions($width: null, $height: null) { width: $width; min-height: $height; }
+
+$maincolor: #d095d7;
+    html{height: 100%;}
+    body{
+      
+    //   @extend %flex;
+       font-family: 'Open Sans', sans-serif;
+      width: 100%;
+      min-height: 100%;
+      background: #948679;
+      font-size: 16px;
+      overflow: hidden;
+    }
+ 
+
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+.content{
+  position: relative; 
+  animation: animatop 0.9s  cubic-bezier(0.425, 1.140, 0.470, 1.125) forwards ;
+}
+
+.card{  
+//  @include dimensions( 500px,  100px);
+  padding: 20px;
+  border-radius: 3px;
+  background-color: rgb(230, 226, 176);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  &:after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: url("../../../assets/thunder.jpg");
+    
+    position: absolute;
+    animation: rotatemagic 0.75s cubic-bezier(0.425, 1.040, 0.470, 1.105) 1s both;
+}
+}
+  
+
+.firstinfo{
+//   @extend %flex;
+//   flex-direction: row;  
+  z-index:2;
+  position: relative;
+  img{ 
+    border-radius: 50%;
+    width: 120px;
+height: 120px;
+margin-left: 10px;
+background-color: #e590dd;
+  }
+  .profileinfo{
+    padding: 0px 10px;
+    background-color: #e68080;
+    h1{font-size: 1.8em;
+    font-weight: bolder;}
+    h3{ font-size: 1.2em;
+        color: $maincolor;
+        font-style: italic;
+    } 
+  }
+}
+
+
+@keyframes animatop{
+  0%{ 
+    opacity: 0;
+    bottom: -500px;}
+  100%{  
+   opacity: 1;  
+  bottom: 0px;}
+}
+ 
+@keyframes animainfos{
+  0%{
+    bottom:  10px;}
+  100%{
+  bottom: -42px;}
+}
+
+@keyframes rotatemagic{
+  0%{
+    opacity: 0;
+    transform: rotate(-0deg);
+    top: -24px;
+    left: -253px;
+  }
+  100%{
+    
+    transform: rotate(+45deg);
+    top: -280px;
+    left: -100px;
+  }
+}

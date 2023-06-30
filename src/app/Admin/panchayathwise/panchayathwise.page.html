@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>Panchayat-Wise</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]='panchayathwise'>
+  <ion-list>
+    <ion-item>
+      <ion-select class="label select-1" placeholder="District Name" formControlName="district" (ionChange)="view1()">
+        <ion-select-option *ngFor="let d of district;" value="{{d.districtname}}">{{d.districtname}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+<ion-list>
+    <ion-item>
+      <ion-select class="label select-1" placeholder="Panchayath Name" formControlName="panchayath">
+        <ion-select-option *ngFor="let p of panchayath;" value="{{p.panchayathname}}">{{p.panchayathname}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-select class="label select-1" placeholder="Type Name" formControlName="typename">
+        <ion-select-option *ngFor="let c of typedata;" value="{{c.typename}}">{{c.typename}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-label position="floating">
+      From Date
+    </ion-label>
+    <ion-input type="date" formControlName="date1" [clearInput]="true"></ion-input>
+  </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        To Date
+      </ion-label>
+      <ion-input type="date" formControlName="date2" [clearInput]="true" (ionChange)="view2()"></ion-input>
+    </ion-item>
+  <ion-item>
+    Total Consumer :- {{total}}
+  </ion-item>
+  </form>
+  
+  <ion-item>
+    <ion-card >
+      <ion-card-header>
+      <ion-card-subtitle *ngFor="let t of details;">{{t.name}}</ion-card-subtitle>
+      <ion-card-subtitle *ngFor="let c of consdetails;">{{c.typename}}</ion-card-subtitle>
+      <ion-card-subtitle *ngFor="let c of consdetails;">{{c.consumernumber}}</ion-card-subtitle>
+      <!-- <ion-card-subtitle>Fine Amount      :-  {{t.fineamount}}</ion-card-subtitle>
+      <ion-card-subtitle>Total Amount        :-  {{t.totalamount}}</ion-card-subtitle> -->
+      </ion-card-header>
+    </ion-card>
+    </ion-item>
+</ion-content>

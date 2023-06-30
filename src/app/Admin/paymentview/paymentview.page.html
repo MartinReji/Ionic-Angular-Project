@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>Payment View</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]='paymentstatus'>
+    <ion-item>
+      <ion-label position="floating">
+        Consumer Number
+      </ion-label>
+      <ion-input type="number" formControlName="consumernumber" placeholder="Cons. No." [clearInput]="true" (ionChange)="view()"></ion-input>
+    </ion-item>
+
+<ion-list>
+        <ion-item>
+          <ion-select placeholder="Select a Month" formControlName="month">
+            <ion-select-option value="01">January</ion-select-option>
+            <ion-select-option value="02">February</ion-select-option>
+            <ion-select-option value="03">March</ion-select-option>
+            <ion-select-option value="04">April</ion-select-option>
+            <ion-select-option value="05">May</ion-select-option>
+            <ion-select-option value="06">June</ion-select-option>
+            <ion-select-option value="07">July</ion-select-option>
+            <ion-select-option value="08">August</ion-select-option>
+            <ion-select-option value="09">September</ion-select-option>
+            <ion-select-option value="10">October</ion-select-option>
+            <ion-select-option value="11">November</ion-select-option>
+            <ion-select-option value="12">December</ion-select-option>
+          </ion-select>
+        </ion-item>
+        </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select placeholder="Select a Year" formControlName="year" (ionChange)="view1()">
+            <ion-select-option value="2016">2016</ion-select-option>
+            <ion-select-option value="2017">2017</ion-select-option>
+            <ion-select-option value="2018">2018</ion-select-option>
+            <ion-select-option value="1997">2019</ion-select-option>
+            <ion-select-option value="2020">2020</ion-select-option>
+            <ion-select-option value="2021">2021</ion-select-option>
+            <ion-select-option value="2022">2022</ion-select-option>
+            <ion-select-option value="2023">2023</ion-select-option>
+            <ion-select-option value="2024">2024</ion-select-option>
+            <ion-select-option value="2025">2025</ion-select-option>
+            <ion-select-option value="2026">2026</ion-select-option>
+          </ion-select>
+        </ion-item>
+        </ion-list>
+</form>
+
+<ion-item *ngFor="let t of details;">
+  <div >
+    <br>
+  <div>
+   Name :- {{t.name}}
+  </div>
+  <br>
+  <div>
+    Contact No. :- {{t.contactnumber}}
+  </div>
+  </div>
+</ion-item>
+<ion-item *ngFor="let t of consdetails;">
+<div >
+  <br>
+  <div>
+    Connection type :- {{t.typename}}
+   </div>
+  <br>
+<div>
+ District :- {{t.districtname}}
+</div>
+<br>
+<div>
+   Panchayath :- {{t.panchayathname}}
+</div>
+<br>
+<div>
+  Ward :- {{t.panchayathward}}
+</div>
+<br>
+<div>
+House No. :- {{t.housenumber}}
+</div>
+<br>
+</div>
+</ion-item>
+
+<ion-item *ngFor="let t of paymentdetails;">
+  <ion-card >
+    <ion-card-header>
+    <ion-card-title>Amount to be Paid    :-  {{t.totalamount}} <span>₹</span> </ion-card-title>
+    <ion-card-subtitle>Current Reading :- {{t.currentreading}}</ion-card-subtitle>
+    <ion-card-subtitle>Reading Date :- {{t.date}}</ion-card-subtitle>
+    <ion-card-subtitle>Used Unit       :-{{t.unitused}}</ion-card-subtitle>
+    <ion-card-subtitle>Fine Amount      :-  {{t.fineamount}}</ion-card-subtitle>
+    <ion-card-subtitle>Payment Status      :-  {{t.paymentstatus}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-item>
+</ion-content>

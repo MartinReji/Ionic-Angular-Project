@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Panchayath Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submit()" [formGroup]='regform'>
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Select District" formControlName="districtname">
+          <ion-select-option *ngFor="let d of district"
+            value="{{d.districtname}}">{{d.districtname}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label position="floating">
+        Panchayath Name
+      </ion-label>
+      <ion-input type="text" formControlName="panchayathname" [clearInput]="true"></ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" color="success">Submit</ion-button>
+  </form>
+</ion-content>

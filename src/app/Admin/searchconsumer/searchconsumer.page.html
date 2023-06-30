@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>Search a Consumer</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]='paymentstatus'>
+    <ion-item>
+      <ion-label position="floating">
+        Consumer Number
+      </ion-label>
+      <ion-input type="number" formControlName="consumernumber" placeholder="Cons. No." [clearInput]="true" (ionChange)="view()"></ion-input>
+    </ion-item>
+</form>
+
+<ion-item *ngFor="let c of details;">
+  <div>
+    <br>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>{{c.name}}</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>{{c.email}}</td>
+      </tr>
+      <tr>
+        <td> Contact No.:</td>
+        <td>{{c.contactnumber}}</td>
+      </tr>
+      <tr>
+        <td>Aadhar No.:</td>
+        <td>{{c.aadharnumber}} </td>
+      </tr>
+      <tr>
+        <td>Registered Date:</td>
+        <td>{{c.regdate}} </td>
+      </tr>
+    </table>
+  </div>
+</ion-item>
+<ion-item *ngFor="let t of consdetails;">
+<div >
+  <br>
+  <table>
+    <tr>
+      <td>Type:</td>
+      <td>{{t.typename}}</td>
+    </tr>
+    <tr>
+      <td>District:</td>
+      <td>{{t.districtname}}</td>
+    </tr>
+    <tr>
+      <td> Panchayath:</td>
+      <td>{{t.panchayathname}}</td>
+    </tr>
+    <tr>
+      <td>Ward:</td>
+      <td>{{t.panchayathward}} </td>
+    </tr>
+    <tr>
+      <td>House Name:</td>
+      <td>{{t.housename}} </td>
+    </tr>
+    <tr>
+      <td>House No.:</td>
+      <td>{{t.housenumber}} </td>
+    </tr>
+    <tr>
+      <td>Place:</td>
+      <td>{{t.place}} </td>
+    </tr>
+    <tr>
+      <td>Pincode:</td>
+      <td>{{t.pincode}} </td>
+    </tr>
+    <tr>
+      <td>Request Date:</td>
+      <td>{{t.requestdate}} </td>
+    </tr>
+  </table>
+<br>
+</div>
+</ion-item>
+</ion-content>

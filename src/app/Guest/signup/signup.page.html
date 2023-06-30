@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+    <ion-title>SignUp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-structor">
+    <div class="signup">
+      <h2 class="form-title" id="signup">Sign up</h2>
+      <form (ngSubmit)="submit()" [formGroup]='signupform'>
+      <div class="form-holder">
+        <input type="text" class="input" formControlName="name" placeholder="Name" />
+        <input type="email" class="input" formControlName="email" placeholder="Email" />
+        <input type="number" class="input" formControlName="contactnumber" placeholder="Contact No." />
+        <input type="number" class="input" formControlName="aadharnumber" placeholder="Aadhar No." />
+        <input type="password" class="input" formControlName="password" placeholder="Password" />
+      </div>
+      <button class="submit-btn">Sign up</button>
+    </form>
+    </div>
+  </div>
+</ion-content>

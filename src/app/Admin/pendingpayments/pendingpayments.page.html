@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>Pending Payments</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]='panchayathwise'>
+  <!-- <ion-list>
+    <ion-item>
+      <ion-select class="label select-1" placeholder="District Name" formControlName="district" (ionChange)="view1()">
+        <ion-select-option *ngFor="let d of district;" value="{{d.districtname}}">{{d.districtname}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+<ion-list>
+    <ion-item>
+      <ion-select class="label select-1" placeholder="Panchayath Name" formControlName="panchayath" (ionChange)="view2()">
+        <ion-select-option *ngFor="let p of panchayath;" value="{{p.panchayathname}}">{{p.panchayathname}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-select class="label select-1" placeholder="Type Name" formControlName="typename">
+        <ion-select-option *ngFor="let c of typedata;" value="{{c.typename}}">{{c.typename}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list> -->
+  <ion-list>
+    <ion-item>
+      <ion-select placeholder="Select a Month" formControlName="month">
+        <ion-select-option value="01">January</ion-select-option>
+        <ion-select-option value="02">February</ion-select-option>
+        <ion-select-option value="03">March</ion-select-option>
+        <ion-select-option value="04">April</ion-select-option>
+        <ion-select-option value="05">May</ion-select-option>
+        <ion-select-option value="06">June</ion-select-option>
+        <ion-select-option value="07">July</ion-select-option>
+        <ion-select-option value="08">August</ion-select-option>
+        <ion-select-option value="09">September</ion-select-option>
+        <ion-select-option value="10">October</ion-select-option>
+        <ion-select-option value="11">November</ion-select-option>
+        <ion-select-option value="12">December</ion-select-option>
+      </ion-select>
+    </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Select a Year" formControlName="year" (ionChange)="view()">
+          <ion-select-option value="2016">2016</ion-select-option>
+          <ion-select-option value="2017">2017</ion-select-option>
+          <ion-select-option value="2018">2018</ion-select-option>
+          <ion-select-option value="1997">2019</ion-select-option>
+          <ion-select-option value="2020">2020</ion-select-option>
+          <ion-select-option value="2021">2021</ion-select-option>
+          <ion-select-option value="2022">2022</ion-select-option>
+          <ion-select-option value="2023">2023</ion-select-option>
+          <ion-select-option value="2024">2024</ion-select-option>
+          <ion-select-option value="2025">2025</ion-select-option>
+          <ion-select-option value="2026">2026</ion-select-option>
+        </ion-select>
+      </ion-item>
+      </ion-list>
+  <!-- <ion-list>
+    <ion-item>
+      <ion-select class="label select-2" placeholder="Type" formControlName="status">
+        <ion-select-option value="Completed">Completed</ion-select-option>
+        <ion-select-option value="Pending">Pending</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list> -->
+  </form>
+  <ion-item>
+    Total Consumer :- {{total}}
+  </ion-item>
+  <ion-item *ngFor="let t of pending;">
+    <ion-card>
+      <ion-card-header>
+      <ion-card-subtitle>{{t.consumernumber}}</ion-card-subtitle>
+      <ion-card-subtitle>Reading Date :- {{t.date}}</ion-card-subtitle>
+      <ion-card-subtitle>Total Amount :- {{t.totalamount}}</ion-card-subtitle>
+      <!-- <ion-card-subtitle>Total Amount        :-  {{t.totalamount}}</ion-card-subtitle> -->
+      </ion-card-header>
+    </ion-card>
+    </ion-item>
+</ion-content>

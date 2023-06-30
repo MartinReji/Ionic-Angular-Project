@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-title></ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+<ion-content>
+ 
+  <section class="today-box" id="today-box"  *ngFor="let t of typedata;" >
+
+     <h1 class="date-title">{{t.typename}}</h1>
+<div>
+  <h5>Amount for Connection : {{t.connectionamount}}</h5>
+     <h5>Amount/Unit : {{t.unitamount}}</h5>
+        <h5>Usage Limit(Kwh) : {{t.limit}}</h5>
+        <h5>Fine/Unit : {{t.fineamount}}</h5>
+           <h5>Description : {{t.description}}</h5>
+              </div>
+              <div class="plus-icon"  [routerLink]= "['/Consumer/connectionrequest',t.typename]">
+              <i>+</i>
+                <!-- <i class="ion ion-ios-add"></i> -->
+                
+             </div>
+  </section>
+     
+  <!--======= Upcoming Events =======-->
+</ion-content>

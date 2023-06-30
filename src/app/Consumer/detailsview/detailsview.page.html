@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>Personal Details</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  <ion-content class="content">
+    <ion-card class="card">
+      <ion-icon name="create-outline" id="edit-icon" [routerLink]="['/Consumer/detailsedit']" size="large"></ion-icon>
+      <div class="firstinfo">
+        <!-- img(src="") -->
+        <img src="../../../assets/customer-icon.png">
+      <div class="profileinfo">
+        <ion-item *ngFor="let c of profile;">
+         <div id="profiledata">
+         <h1>{{c.name}}</h1> 
+            <br>
+            <table>
+              <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td>{{c.email}}</td>
+              </tr>
+              <tr>
+                <td> Contact</td>
+                <td>:</td>
+                <td>{{c.contactnumber}}</td>
+              </tr>
+              <tr>
+                <td>Aadhar no</td>
+                <td>:</td>
+                <td>{{c.aadharnumber}} </td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>:</td>
+                <td>{{c.password}} </td>
+              </tr>
+            </table>
+               
+            </div>
+      
+        </ion-item>
+  </div>
+  </div>
+  </ion-card>
+  </ion-content>

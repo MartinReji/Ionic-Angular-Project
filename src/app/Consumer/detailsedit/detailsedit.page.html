@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+    <ion-title>Personal Details Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="update()" [formGroup]='editdetails'>
+<ion-item>
+  <ion-label position="floating">
+   Name
+  </ion-label>
+  <ion-input type="text" formControlName="name" [clearInput]="true" readonly></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">
+    E-mail
+  </ion-label>
+  <ion-input type="email" formControlName="email" [clearInput]="true"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">
+    Contact No.
+  </ion-label>
+  <ion-input type="number" formControlName="contactnumber" [clearInput]="true"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">
+    Aadhar No.
+  </ion-label>
+  <ion-input type="number" formControlName="aadharnumber" [clearInput]="true" readonly></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">
+    Password
+  </ion-label>
+  <ion-input type="text" formControlName="password" [clearInput]="true"></ion-input>
+</ion-item>
+<ion-button type="submit" shape="round" color="success">Update</ion-button>
+</form>
+</ion-content>

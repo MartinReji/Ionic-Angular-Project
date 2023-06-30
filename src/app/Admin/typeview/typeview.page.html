@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+    <ion-title>Connection Type View</ion-title>
+    <!-- <ion-button fill="clear" [routerLink]= "['/vegandfruites/Admin/categoeryregistration']">
+        Add New
+      </ion-button> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let t of typedata;">
+    <div>
+      <br>
+    
+    <!-- <div>
+      <img [src]="c.image" height="100px">
+    </div> 
+    <br> -->
+    <div>
+     Connection Type Name :- {{t.typename}}
+    </div>
+    <br>
+    <div>
+      Connection Amount :- {{t.connectionamount}}
+    </div>
+    <br>
+    <div>
+     Amount per Unit :- {{t.unitamount}}
+    </div>
+    <br>
+    <div>
+      Unit Limit :- {{t.limit}}
+     </div>
+     <br>
+     <div>
+      Fine per Unit :- {{t.fineamount}}
+     </div>
+     <br>
+    <div>
+      Description :- {{t.description}}
+    </div> 
+    <br>
+    <div> 
+    </div>
+  </div>
+   
+  <div> 
+    <ion-button fill="solid" [routerLink]= "['/Admin/typeedit',t.collection_connectiontypesId]" color="success">Edit</ion-button>
+    </div>
+    <br>
+
+    <div> 
+    <ion-button fill="solid"
+    (click)="delete(t.collection_connectiontypesId)">Delete</ion-button>
+    </div>
+    
+  </ion-item>
+</ion-content>

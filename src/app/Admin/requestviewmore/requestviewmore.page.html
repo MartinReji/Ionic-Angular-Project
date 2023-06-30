@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>More Details</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let c of details">
+    <div>
+      <br>
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td>{{c.name}}</td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>{{c.email}}</td>
+        </tr>
+        <tr>
+          <td> Contact No.:</td>
+          <td>{{c.contactnumber}}</td>
+        </tr>
+        <tr>
+          <td>Aadhar No.:</td>
+          <td>{{c.aadharnumber}} </td>
+        </tr>
+        <tr>
+          <td>Registered Date:</td>
+          <td>{{c.regdate}} </td>
+        </tr>
+      </table>
+      <ion-button fill="solid"
+      (click)="accept()">Accept</ion-button>
+  
+  <ion-button fill="solid"
+  (click)="reject()">Reject</ion-button>      
+      </div>
+       
+  </ion-item>
+  
+</ion-content>

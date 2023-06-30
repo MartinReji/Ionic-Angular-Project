@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>Monthly Reading View</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <form [formGroup]='viewconsumerno'>
+     <!-- <ion-item *ngFor="let t of consumerno;">
+      <div>
+        <br>
+        <div>
+          Consumerno :- {{t.consumernumber}}
+        </div>
+        <br>
+        <div>
+          Connection Type :- {{t.typename}}
+        </div>
+      </div>
+      <br>
+    </ion-item>
+    <ion-item> 
+       <ion-label position="floating">
+        Consumer Number
+      </ion-label>
+      <ion-input type="number" formControlName="consumernumber" [clearInput]="true" (ionChange)="view()"></ion-input>
+    </ion-item>
+  </form>  -->
+  <ion-list>
+    <ion-item>
+      <ion-select class="label select-1" placeholder="Con.Num" formControlName="consumernumber" (ionChange)="view()">
+        <ion-select-option *ngFor="let d of consumerno" value="{{d.consumernumber}}">{{d.consumernumber}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  </form>
+
+  <ion-item *ngFor="let t of consdetails;">
+    <div>
+      <br>
+      <div>
+        Connection Type :- {{t.typename}}
+      </div>
+      <br>
+      <div>
+        District :- {{t.districtname}}
+      </div>
+      <br>
+      <div>
+        Panchayath :- {{t.panchayathname}}
+      </div>
+      <br>
+      <div>
+        Ward :- {{t.panchayathward}}
+      </div>
+      <br>
+      <div>
+        House Name. :- {{t.housename}}
+      </div>
+      <br>
+      <div>
+        House No. :- {{t.housenumber}}
+      </div>
+    </div>
+  </ion-item>
+  <form [formGroup]='viewstatus'>
+    <ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-select class="label select-2" placeholder="Type" formControlName="status" (ionChange)="view1()">
+            <ion-select-option value="Completed">Completed</ion-select-option>
+            <ion-select-option value="Pending">Pending</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+  </form>
+
+  <ion-item *ngFor="let t of monthlyreading;">
+    <ion-card >
+      <ion-card-header>
+      <ion-card-title>{{t.consumernumber}}</ion-card-title>
+      <ion-card-subtitle>Current Reading :- {{t.currentreading}}</ion-card-subtitle>
+      <ion-card-subtitle>Reading Date :- {{t.date}}</ion-card-subtitle>
+      <ion-card-subtitle>Unit Consumed      :-{{t.unitused}}</ion-card-subtitle>
+      <ion-card-subtitle>Fine Amount      :-  {{t.fineamount}}</ion-card-subtitle>
+      <ion-card-subtitle>Total Amount        :-  {{t.totalamount}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <div *ngIf="t.paymentstatus == 'Pending'; then trueBlock; else falseBlock"></div>
+
+                      <ng-template #trueBlock><ion-button shape="round" size="default" [routerLink]= "['/Consumer/payment',t.collection_monthlyreadingId]">Payment<ion-icon slot="end" name="arrow-forward-outline"></ion-icon></ion-button></ng-template>
+
+                      <ng-template #falseBlock><ion-button shape="round" size="default" [routerLink]= "['/Consumer/viewbill',t.collection_monthlyreadingId]">Bill<ion-icon slot="end" name="arrow-forward-outline"></ion-icon></ion-button></ng-template>
+    </ion-card>
+    </ion-item>
+</ion-content>

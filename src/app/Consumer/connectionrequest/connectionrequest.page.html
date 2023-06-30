@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-title>New Connection Request</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="regform" (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label position="floating">
+        House Name:
+      </ion-label>
+      <ion-input type="text" formControlName="housename" placeholder="Enter house name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        House Number.:
+      </ion-label>
+      <ion-input type="number" formControlName="housenumber" placeholder="Enter House No."></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        Place:
+      </ion-label>
+      <ion-input type="text" formControlName="place" placeholder="Enter your place"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item >
+        <ion-select placeholder="Select district" formControlName="districtname" (ionChange)="view()">
+          <ion-select-option value="{{c.districtname}}" *ngFor="let c of district;">{{c.districtname}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  <ion-list>
+    <ion-item >
+      <ion-select placeholder="Select panchayath" formControlName="panchayathname">
+        <ion-select-option value="{{c.panchayathname}}" *ngFor="let c of panchayath;">{{c.panchayathname}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+    <ion-item>
+      <ion-label position="floating">
+        Pincode
+      </ion-label>
+      <ion-input type="number" formControlName="pincode" placeholder="enter pincode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Ward no:
+      </ion-label>
+      <ion-input type="number" formControlName="panchayathward" placeholder="enter wardno"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label position="floating">
+        Type Name:
+      </ion-label>
+      <ion-input type="text" formControlName="typename" readonly></ion-input>
+    </ion-item> -->
+
+    <ion-button>
+      <ion-input type="submit" value="Submit"></ion-input>
+    </ion-button>
+    <ion-button>
+      <ion-input type="button" value="Cancel" [routerLink]="['/Consumer/index']"></ion-input>
+    </ion-button>
+  </form>
+</ion-content>

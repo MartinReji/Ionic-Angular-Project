@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+    <ion-title>Connection Request View</ion-title>
+    <!-- <ion-button fill="clear" [routerLink]= "['/vegandfruites/Admin/categoeryregistration']">
+        Add New
+      </ion-button> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let r of request;">
+    <div>
+      <div class="card">
+        
+        <div class="card__content">
+          <div class="card__label">{{r.requestdate}}</div>
+          <h2>{{r.typename}}</h2>
+          <p>District: {{r.districtname}}</p>
+          <p>Panchayath: {{r.panchayathname}}</p>
+          <p>House/Build: {{r.housename}}</p>
+          <p>House No: {{r.housenumber}}</p>
+          
+          <div class="card__cta-container">
+            <button class="card__cta"  [routerLink]= "['/Admin/requestviewmore', r.collection_newconnectionId]">View More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-item>
+  
+</ion-content>

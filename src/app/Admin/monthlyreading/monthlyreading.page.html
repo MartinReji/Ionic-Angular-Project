@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>Monthly Reading</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]='readingform' (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label position="floating">
+        Consumer Number
+      </ion-label>
+      <ion-input type="number" formControlName="consumernumber" [clearInput]="true"></ion-input>
+      <ion-button fill="solid"
+    (click)="view()">Next</ion-button>
+    </ion-item>
+      <ion-item *ngFor="let t of details;">
+      <div >
+        <br>
+      <div>
+       Name :- {{t.name}}
+      </div>
+      <br>
+      <div>
+        Contact No. :- {{t.contactnumber}}
+      </div>
+      </div>
+  </ion-item>
+  <ion-item *ngFor="let t of consdetails;">
+    <div >
+      <br>
+    <div>
+     District :- {{t.districtname}}
+    </div>
+    <br>
+    <div>
+       Panchayath :- {{t.panchayathname}}
+    </div>
+    <br>
+    <div>
+      Ward :- {{t.panchayathward}}
+   </div>
+   <br>
+   <div>
+    House No. :- {{t.housenumber}}
+ </div>
+ <br>
+ <div>
+  Connection Type :- {{t.typename}}
+</div>
+<br>
+    </div>
+</ion-item>
+
+    <ion-item>
+      <ion-label>
+        Previous Reading&nbsp;:-&nbsp;
+      </ion-label><br>
+      <ion-input type="number" formControlName="previousreading" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Current Reading
+      </ion-label>
+      <ion-input type="number" formControlName="currentreading"  [clearInput]="true"></ion-input>
+      <ion-button fill="solid"
+      (click)="viewunitused()">Next</ion-button>
+    </ion-item>     
+    <ion-item>
+      <ion-label position="floating">
+        Unit Used
+      </ion-label>
+      <ion-input type="number" formControlName="unitused" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Fine Amount
+      </ion-label>
+      <ion-input type="number" formControlName="fineamount" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Total Amount
+      </ion-label>
+      <ion-input type="number" formControlName="totalamount" readonly></ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" color="success">Submit</ion-button>
+    </form>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+    <ion-title>Connections
+      <ion-button fill="solid" class="ion-button" [routerLink]= "['/Consumer/rejectedconnection']"color="danger">Rejected</ion-button>
+    <!-- <ion-button fill="solid"  [routerLink]= "['/Consumer/pendingconnection']" color="warning">Pending</ion-button> -->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="today-box" id="today-box"  *ngFor="let t of connectiondata;" >
+
+    <h1 class="date-title">{{t.typename}}</h1>
+<div>
+ <h5>Consumer No. : {{t.consumernumber}}</h5>
+    <h5>House/Building : {{t.housename}}</h5>
+       <h5>House/Building No. : {{t.housenumber}}</h5>
+       <h5>Panchayath : {{t.panchayathname}}</h5>
+          <h5>Ward : {{t.panchayathward}}</h5>
+             </div>
+  
+ </section>
+    
+ <!--======= Upcoming Events =======-->
+</ion-content>

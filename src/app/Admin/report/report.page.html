@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    <ion-title>Reports</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-card>
+      <ion-card-header>
+      <ion-card-title>Pending Payment Consumer</ion-card-title>
+      <ion-button shape="round" size="default" [routerLink]= "['/Admin/pendingpayments']">Go<ion-icon slot="end" name="arrow-forward-outline"></ion-icon></ion-button>
+      </ion-card-header>
+    </ion-card>
+    </ion-item>
+  <ion-item>
+    <ion-card>
+      <ion-card-header>
+      <ion-card-title>Panchayat-Wise Consumer</ion-card-title>
+      <ion-button shape="round" size="default" [routerLink]= "['/Admin/panchayathwise']">Go<ion-icon slot="end" name="arrow-forward-outline"></ion-icon></ion-button>
+      </ion-card-header>
+    </ion-card>
+    </ion-item>
+      <ion-item>
+        <ion-card>
+          <ion-card-header>
+          <ion-card-title>Payment Status View</ion-card-title>
+          <ion-button shape="round" size="default" [routerLink]= "['/Admin/paymentview']">Go<ion-icon slot="end" name="arrow-forward-outline"></ion-icon></ion-button>
+          </ion-card-header>
+        </ion-card>
+        </ion-item>
+        <ion-item>
+          <ion-card>
+            <ion-card-header>
+            <ion-card-title>Search a Consumer</ion-card-title>
+            <ion-button shape="round" size="default" [routerLink]= "['/Admin/searchconsumer']">Go<ion-icon slot="end" name="arrow-forward-outline"></ion-icon></ion-button>
+            </ion-card-header>
+          </ion-card>
+          </ion-item>
+          <ion-item>
+            <ion-card>
+              <ion-card-header>
+              <ion-card-title>Search a Bill</ion-card-title>
+              <ion-button shape="round" size="default" [routerLink]= "['/Admin/searchbill']">Go<ion-icon slot="end" name="arrow-forward-outline"></ion-icon></ion-button>
+              </ion-card-header>
+            </ion-card>
+            </ion-item>
+</ion-content>

@@ -1,0 +1,77 @@
+:before,*:after {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+//
+
+body {
+	background-color: #eee;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.card {
+	background-color: #ed8b8b;
+	overflow: hidden;
+	position: relative;
+	border-radius: 12px;
+}
+
+.card * {
+	margin: 0;
+}
+
+.card__content {
+	padding: 1rem;
+	padding-top: 2.5rem;
+	> * + * {
+		margin-top: 0.5rem;
+	}
+}
+
+.card__label {
+	position: absolute;
+	left: 0;
+	transform: translatey(-1.7rem);
+	background-color: tomato;
+	padding-left: 1rem;
+	padding: 0.25rem 0.75rem 0.25rem 1rem;
+	color: #fff;
+	border-radius: 0 4px 4px 0;
+}
+
+.card__link {
+  color: inherit;
+  text-decoration: none;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.card__cta-container {
+	padding-top: 1rem;
+	border-top: 1px solid #bebebe;
+  margin-top: 1rem;
+}
+
+.card__cta {
+	position: relative;
+	width: 100%;
+  padding: 0.5rem;
+}
